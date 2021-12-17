@@ -1,7 +1,26 @@
-{{page-title "AutosuggestInput"}}
-
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<div class="container">
+  <div class="mt-3 mb-4">
+    <label for="dad-joke-search-input" class="form-label">
+      Search Dad Jokes
+    </label>
+    <AutosuggestInput
+      id="dad-joke-search-input"
+      class="form-control"
+      placeholder="Example: Why did"
+      @search={{this.searchDadJokes}}
+      @options={{this.options}}
+    />
+  </div>
+  <div>
+    <label for="repo-search-input" class="form-label">
+      Search GitHub Repositories
+    </label>
+    <AutosuggestInput
+      id="repo-search-input"
+      class="form-control"
+      placeholder="Example: ember"
+      @search={{this.searchRepos}}
+      @options={{this.options}}
+    />
+  </div>
+</div>

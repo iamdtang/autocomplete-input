@@ -1,0 +1,12 @@
+<input
+  list={{this.listId}}
+  value={{this.value}}
+  onInput={{perform this.searchTask}}
+  ...attributes
+/>
+
+<datalist id={{this.listId}}>
+  {{#each @options as |value|}}
+    <option value={{value}} />
+  {{/each}}
+</datalist>
