@@ -3,7 +3,8 @@ import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
 export default class ApplicationController extends Controller {
-  @tracked options = [];
+  @tracked dadJokes = [];
+  @tracked repos = [];
 
   @action
   async searchDadJokes(search) {
@@ -16,7 +17,7 @@ export default class ApplicationController extends Controller {
 
     const json = await response.json();
 
-    this.options = json.results.mapBy('joke');
+    this.dadJokes = json.results.mapBy('joke');
   }
 
   @action
@@ -27,6 +28,6 @@ export default class ApplicationController extends Controller {
 
     const json = await response.json();
 
-    this.options = json.items.mapBy('full_name');
+    this.repos = json.items.mapBy('full_name');
   }
 }
