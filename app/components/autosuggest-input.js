@@ -10,6 +10,10 @@ export default class AutosuggestInputComponent extends Component {
 
   @restartableTask
   *searchTask(event) {
+    if (!(event instanceof InputEvent)) {
+      return;
+    }
+
     this.value = event.target.value;
 
     const debounce = 250;
