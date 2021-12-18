@@ -1,8 +1,8 @@
 {
-  "name": "autosuggest-input",
+  "name": "autocomplete-input",
   "version": "0.0.0",
   "private": true,
-  "description": "Small description for autosuggest-input goes here",
+  "description": "Small description for autocomplete-input goes here",
   "repository": "",
   "license": "MIT",
   "author": "",

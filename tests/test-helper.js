@@ -1,5 +1,5 @@
-import Application from 'autosuggest-input/app';
-import config from 'autosuggest-input/config/environment';
+import Application from 'autocomplete-input/app';
+import config from 'autocomplete-input/config/environment';
 import * as QUnit from 'qunit';
 import { setApplication } from '@ember/test-helpers';
 import { setup } from 'qunit-dom';

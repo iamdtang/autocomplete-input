@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'autosuggest-input',
+    modulePrefix: 'autocomplete-input',
     environment,
     rootURL: '/',
     locationType: 'auto',
