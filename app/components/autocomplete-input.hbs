@@ -1,8 +1,8 @@
 <input
   list={{this.listId}}
-  value={{this.value}}
-  onInput={{perform this.searchTask}}
+  value={{@value}}
   ...attributes
+  onInput={{perform this.onInputTask}}
 />
 
 <datalist id={{this.listId}}>

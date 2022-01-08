@@ -1,26 +1,29 @@
 import Component from '@glimmer/component';
 import { restartableTask, timeout } from 'ember-concurrency';
-import { tracked } from '@glimmer/tracking';
 import { guidFor } from '@ember/object/internals';
 
-export default class AutosuggestInputComponent extends Component {
-  @tracked value = '';
-
+export default class AutocompleteInputComponent extends Component {
   listId = guidFor(this);
 
+  wasOptionSelected(value) {
+    return this.args.options.includes(value);
+  }
+
   @restartableTask
-  *searchTask(event) {
-    if (!(event instanceof InputEvent)) {
+  *onInputTask(event) {
+    const { value } = event.target;
+
+    this.args.onInput(value);
+
+    if (this.wasOptionSelected(value)) {
       return;
     }
-
-    this.value = event.target.value;
 
     const debounce = 250;
     yield timeout(debounce);
 
-    if (this.value) {
-      this.args.search(this.value);
+    if (value) {
+      this.args.search(value);
     }
   }
 }

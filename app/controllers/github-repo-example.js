@@ -2,22 +2,13 @@ import Controller from '@ember/controller';
 import { tracked } from '@glimmer/tracking';
 import { action } from '@ember/object';
 
-export default class ApplicationController extends Controller {
-  @tracked dadJokes = [];
+export default class GithubRepoExampleController extends Controller {
+  @tracked repo;
   @tracked repos = [];
 
   @action
-  async searchDadJokes(search) {
-    const response = await fetch(
-      `https://icanhazdadjoke.com/search?term=${search}`,
-      {
-        headers: { Accept: 'application/json' },
-      }
-    );
-
-    const json = await response.json();
-
-    this.dadJokes = json.results.mapBy('joke');
+  setRepo(repo) {
+    this.repo = repo;
   }
 
   @action

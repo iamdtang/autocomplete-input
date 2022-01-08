@@ -1,0 +1,16 @@
+{{page-title "Dad Joke Example"}}
+
+<div class="mt-3 mb-4">
+  <label for="dad-joke-search-input" class="form-label">
+    Search Dad Jokes
+  </label>
+  <AutocompleteInput
+    id="dad-joke-search-input"
+    class="form-control"
+    placeholder="Example: Why did"
+    @value={{this.dadJoke}}
+    @onInput={{this.setDadJoke}}
+    @search={{this.searchDadJokes}}
+    @options={{this.dadJokes}}
+  />
+</div>

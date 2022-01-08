@@ -1,0 +1,16 @@
+{{page-title "Github Repo Example"}}
+
+<div>
+  <label for="repo-search-input" class="form-label">
+    Search GitHub Repositories
+  </label>
+  <AutocompleteInput
+    id="repo-search-input"
+    class="form-control"
+    placeholder="Example: ember"
+    @value={{this.repo}}
+    @onInput={{this.setRepo}}
+    @search={{this.searchRepos}}
+    @options={{this.repos}}
+  />
+</div>
